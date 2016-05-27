@@ -1,5 +1,7 @@
 package ru.levelp;
 
+import java.util.Scanner;
+
 /**
  * Created by vladimir on 24.05.16.
  */
@@ -47,6 +49,7 @@ public class Main {
 
         result = 5 + 3 + "";
         System.out.println(result);
+
 
 //        5/3 = 1
 //         5/3.0 = 1.(6)
@@ -121,12 +124,13 @@ public class Main {
         if (min > b) {
             min = b;
         }
+
         if (min > c) {
             min = c;
         }
-        if (min > d) {
-            min = d;
-        }
+//        if (min > d) {
+//            min = d;
+//        }
 
 //        if (a <= b && a <= c) {
 //            min = a;
@@ -153,6 +157,14 @@ public class Main {
         if (Math.abs(100.0-100.2) < eps) {
             System.out.println("Считаем, что равны");
         }
+
+//        double d = b*b-4*a*c;
+//
+//        if (d > 0) {
+//            double x1 = (-b+Math.sqrt(d))/(2*a);
+//        }
+
+
 
     }
 
