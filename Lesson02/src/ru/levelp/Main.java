@@ -81,6 +81,18 @@ public class Main {
         x++ != ++x
         x-- != --x
 
+        x++ - постфиксный инкремент
+        ++x - префиксный инкремент
+
+        int x = 0;
+        int res;
+        res = x++; // x = 1, res = 0 -> 1) res = x; 2) x = x + 1;
+        res = ++x; // x = 2, res = 2 -> 1) x = x + 1; 2) res = x;
+        // x = 2
+
+        System.out.println(x++); // "2"
+        System.out.println(++x); // "4"
+
         Массивы a[20] и b[20] заполняете случайными числами в диапазоне от 0..7
         Создаете массив с[20]
         i-й элемент массива c должен быть равен
@@ -95,7 +107,7 @@ public class Main {
 //        System.out.println("rand = " + rand);
 
 //        String[] strArray = new String[20];
-//        for (int i = 0; i < strArray.length; i++) {
+//        for (int i = 0; i < strArray.length; ++i) {
 //            strArray[i] = "Hello "+i;
 ////            System.out.println(strArray[i]);
 //        }
