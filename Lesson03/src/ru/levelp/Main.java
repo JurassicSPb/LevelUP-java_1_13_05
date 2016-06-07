@@ -42,18 +42,75 @@ public class Main {
 
         vasya.phone = "+73453459804";
 
-        System.out.println(vasya.name + " " + vasya.phone + " " + vasya.email);
+        vasya.print();
+
+        String toOutput = vasya.string();
+        int res = 5 + 2;
+
+//        file.write(toOutput);
+//        textField.setText(toOutput);
 
         Contact vasya2 = new Contact();
         vasya2 = vasya;
         vasya2.email = "AAAA@AAA.RU";
         vasya.email = "bbbbbb";
 
-        System.out.println(vasya.name + " " + vasya.phone + " " + vasya.email);
+        vasya.print();
 
         char first = vasya.name.toCharArray()[0]; // так можно получить первый символ char имени
 
+        int[] array = new int[10];
+        String[] strArray = new String[10];
+        Contact[] contacts = new Contact[10];
+
+//        for (int i = 0; i < contacts.length; i++) {
+//            contacts[i] = new Contact();
+//        }
+//
+//        contacts[0].name = "Alex";
+//        contacts[0].phone = "43545";
+//        contacts[0].email = "fdfgdfgdf@fdfgd.gfg";
+//
+//        //...[1]...[2]...
+//
+//        for (int j = 0; j < contacts.length - 1; j++) {
+//            //Пробег ->
+//            for (int i = 0; i < contacts.length - 1 - j; i++) {
+//                int minLength = contacts[i].name.length(); //Math.min(contacts[i].name.length(), contacts[i+1].name.length());
+//                if (minLength > contacts[i+1].name.length()) {
+//                    minLength = contacts[i+1].name.length();
+//                }
+//                for (int k = 0; k < minLength; k++) {
+//                    char left = contacts[i].name.toCharArray()[k];
+//                    char right = contacts[i + 1].name.toCharArray()[k];
+//                    if (left > right) {
+//                        //надо менять контакты i и i+1
+//                        Contact temp = contacts[i];
+//                        contacts[i] = contacts[i + 1];
+//                        contacts[i + 1] = temp;
+//                        break;
+//                    }
+//                }
+//            }
+//            //
+//        }
+//
+//        //Alex
+//        //Alexandr
+//
+//        for (int i = 0; i < contacts.length; i++) {
+//            System.out.println(contacts[i].name + " " + contacts[i].phone);
+//        }
+
         /*
+        javarush.ru
+        HeadFirst "Изучаем Java"
+        stepic.org
+
+        Алгоритмы и структуры данных:
+        Роберт Лафоре
+        Роберт Седжвик
+
         ДЗ
         1) Создаете 10 объектов класса Contact с разными именами, телефонами и email
             (настоятельно рекомендую записать их в массив)

@@ -8,4 +8,17 @@ public class Contact {
     String phone;
     String name;
     String email;
+
+    //Поведение объекта - это методы
+
+    public void print() {
+        System.out.println(name + " " + phone + " " + email);
+    }
+
+    //Перед именем метода необходимо писать тип возвращаемого значения
+    public String string() {
+        String outputString = name + " " + phone + " " + email;
+        return outputString;
+    }
+
 }
