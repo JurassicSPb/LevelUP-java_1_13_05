@@ -13,6 +13,32 @@ public class MathOperations {
         return min;
     }
 
+    public int sum(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+    }
+
+    public int avr(int[] array) {
+        return sum(array) / array.length;
+    }
+
+    public int[] sort(int[] array, boolean isAscending) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - 1 - i; j++) {
+                if ((array[j] > array[j + 1] && isAscending)
+                        || (array[j] < array[j+1] && !isAscending)) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
     //max(int, int, int)
 
     //sum(int[]) - возвращает сумму элементов массива
