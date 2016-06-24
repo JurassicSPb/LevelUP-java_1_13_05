@@ -5,6 +5,8 @@ import ru.levelp.shapes.Rectangle;
 import ru.levelp.shapes.Shape2D;
 import ru.levelp.shapes.SquareAsRect;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 public class Main {
@@ -63,6 +65,38 @@ public class Main {
         SquareAsRect square = new SquareAsRect(324);
 
         System.out.println(square);
+
+        Shape2D shape = new Shape2D() {
+            @Override
+            public void draw() {
+
+            }
+        };
+
+        Comparable<Rectangle> comparable = new Comparable<Rectangle>() {
+            @Override
+            public int compareTo(Rectangle o) {
+                return 0;
+            }
+        };
+
+        new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        };
+
     }
 
     /*
@@ -96,5 +130,13 @@ public class Main {
         phone3
         ...
         <<< Name's phones >>>
+
+
+
+     Занятие 08:
+     1) Правильная сортировка по алфавиту контактов
+     2) User научить сортировать по возрасту
+     3) MultiAngle сортируется по количеству углов
+     4) Square сортируем по площади
      */
 }

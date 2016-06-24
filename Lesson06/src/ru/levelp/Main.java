@@ -1,7 +1,10 @@
 package ru.levelp;
 
 import ru.levelp.model.User;
-import ru.levelp.model.UserFriend;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,17 +26,49 @@ public class Main {
 //
 ////        c.string();
 
-        User user = new User();
+//        User user = new User();
 
-        user.getAge();
-        user.getName();
+//        user.getAge();
+//        user.getName();
 
-        UserFriend friend = new UserFriend();
+//        UserFriend friend = new UserFriend();
+//
+//        friend.getPhone();
+//        friend.getEmail();
+//        friend.getName();
+//        friend.getAge();
 
-        friend.getPhone();
-        friend.getEmail();
-        friend.getName();
-        friend.getAge();
+        ArrayList<User> users = new ArrayList<User>();
+        users.add(new User("Vova", 22));
+        users.add(new User("Dima", 24));
+        users.add(new User("Nik", 19));
+
+        //по алфавиту
+        Collections.sort(users);
+
+        for (int i = 0; i < users.size(); i++) {
+            System.out.println(users.get(i).getName());
+        }
+
+        Comparator<User> compUserByAge = new Comparator<User>() {
+            @Override
+            public int compare(User u1, User u2) {
+                //сравниваем age u1 и u2
+                return 0;
+            }
+        };
+
+        Comparator<User> comp = (u1, u2) -> {
+            //сравниваем age u1 и u2
+            return 0;
+        };
+
+        Collections.sort(users, compUserByAge);
+
+
+//        User u = new UserFriend("sdfsdf", 8);
+//        Comparable<User> c = new UserFriend("dfgdfg", 90);
+//        Serializable s = new User("5345", 434);
 
         //У одного класса может быть сколько угодно наследников
         //У одного наследника может быть только один родитель

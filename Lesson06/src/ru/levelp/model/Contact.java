@@ -1,5 +1,7 @@
 package ru.levelp.model;
 
+import java.util.ArrayList;
+
 /*
 private - доступ к полю/методу возможен только внутри класса,
     в котором создано поле/метод
@@ -7,7 +9,7 @@ public - противоположен private, то есть разрешает 
  */
 public class Contact {
     private String name;
-    private String phone;
+    private ArrayList<String> phones = new ArrayList<String>();
     private String email;
     private int age;
     private int numbersCount;
@@ -38,7 +40,7 @@ public class Contact {
     }
 
     public Contact(int age, String phone) {
-        this.phone = phone;
+        this.phones.add(phone);
         this.age = age;
     }
 
@@ -51,12 +53,12 @@ public class Contact {
      */
     public Contact(String name, String phone, String email) {
         this.name = name;
-        this.phone = phone;
+        this.phones.add(phone);
         this.email = email;
     }
 
     public void print() {
-        System.out.println(string());
+        System.out.println(toString());
 //        numbersCount = 3454;
 //
 //        String name = "Dima";
@@ -66,8 +68,18 @@ public class Contact {
 //        this.name
     }
 
-    private String string() {
-        return name + " " + phone + " " + email;
+    @Override
+    public String toString() {
+        String result = name + " " + email;
+
+        if (phones.size() == 1) {
+            result += " " + phones.get(0);
+        } else {
+            result += "\n<=== Phones ===>\n";
+            //result += телефоны с переносом строк
+        }
+
+        return result;
     }
 
     //Сеттер
@@ -75,17 +87,40 @@ public class Contact {
         numbersCount = count;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+//    public void setPhone(String phone) {
+////        this.phone = phone;
+////    }
+//
+//        public void setEmail (String email){
+//            this.email = email;
+//        }
 
     //Геттер
+
     public String getName() {
         return name;
     }
 
+    public void addPhone(String phone) {
+        phones.add(phone);
+    }
+
+    public ArrayList<String> getPhones() {
+        return phones;
+    }
+
+
+    //должен вернуть true, если данные this объекта совпадают с another
+    @Override
+    public boolean equals(Object another) {
+        if (another instanceof Contact) {
+            Contact contact = (Contact) another;
+            return this.name.equals(contact.name);
+        } else if (another instanceof User) {
+            User user = (User) another;
+            return this.name.equals(user.name);
+        } else {
+            return false;
+        }
+    }
 }
